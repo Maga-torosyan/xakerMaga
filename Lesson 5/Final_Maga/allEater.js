@@ -6,18 +6,7 @@ class AllEater extends All{
   
   }
 
-  getNewCoordinates() {
-    this.directions = [
-      [this.x - 1, this.y - 1],
-      [this.x, this.y - 1],
-      [this.x + 1, this.y - 1],
-      [this.x - 1, this.y],
-      [this.x + 1, this.y],
-      [this.x - 1, this.y + 1],
-      [this.x, this.y + 1],
-      [this.x + 1, this.y + 1]
-    ];
-  }
+  
 
   chooseCell(grass, grassEater) {
   this.getNewCoordinates();
@@ -105,13 +94,4 @@ class AllEater extends All{
     }
   }
 
-}
-function setDelay(i) {
-  setTimeout(function(){
-      console.log(i);
-  }, 2000);
-}
-
-for (var i = 1; i <= 10; ++i) {
-  setDelay(i);
 }

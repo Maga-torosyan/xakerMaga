@@ -1,22 +1,12 @@
-class Character1 {
+class Character1 extends All {
   constructor(x, y) {
     super(x,y)
     this.energy = 5;
-    this.directions = [];
+
+    
   }
 
-  getNewCoordinates() {
-    this.directions = [
-      [this.x - 1, this.y - 1],
-      [this.x, this.y - 1],
-      [this.x + 1, this.y - 1],
-      [this.x - 1, this.y],
-      [this.x + 1, this.y],
-      [this.x - 1, this.y + 1],
-      [this.x, this.y + 1],
-      [this.x + 1, this.y + 1]
-    ];
-  }
+ 
 
   chooseCell(grassEater) {
     let found = [];
@@ -109,6 +99,19 @@ class Character1 {
       this.energy = 10;
       this.multiply = 0;
     }
+    
+      function setDelay(i) {
+        setTimeout(function(){
+            console.log(i);
+        }, 2000);
+      }
+      
+      for (var i = 0; i <= 10; ++i) {
+        setDelay(i);
+      }
+    
   }
+  
 
 }
+

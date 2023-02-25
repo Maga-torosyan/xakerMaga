@@ -2,23 +2,12 @@ class GrassEater extends All{
     constructor(x, y) {
        super(x,y)
         this.energy = 8;
-        this.directions = [];
+       this.gender = 0;
 
 
     }
 
-    getNewCoordinates() {
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ];
-    }
+   
 
     chooseCell(character) {
         this.getNewCoordinates();
@@ -95,6 +84,7 @@ class GrassEater extends All{
         matrix[this.y][this.x] = 0;
     }
     mul() {
+        let gend =this.gender();
         let found = this.chooseCell(0);
         let emptyCell = random(found);
         if (emptyCell) {
@@ -105,6 +95,11 @@ class GrassEater extends All{
             this.energy = 8;
             this.multiply = 0;
         }
+        else if (gend>=0) {
+            fill('orange');
+            rect(x * side, y * side, side, side);
+            console.log('boy')
+          }
     }
 
 

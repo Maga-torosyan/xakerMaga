@@ -5,6 +5,7 @@ let grassEaterArr = [];
 let allEaterArr = [];
 let character1Arr = [];
 let wallArr = [];
+let bombArr = [];
 
 
 
@@ -40,6 +41,9 @@ function setup() {
       else if (matrix[y][x] === 5) {
         wallArr.push(new Wall(x, y));
       }
+      else if (matrix[y][x] === 6) {
+        bombArr.push(new Bomb(x, y));
+      }
     }
   }
 
@@ -70,6 +74,10 @@ function draw() {
         fill('white');
         rect(x * side, y * side, side, side)
       }
+      else if (matrix[y][x] === 6) {
+        fill('pink');
+        rect(x * side, y * side, side, side)
+      }
 
 
       else {
@@ -97,6 +105,9 @@ function draw() {
   }
   for (let i = 0; i < wallArr.length; i++) {
     wallArr[i].injure()
+  }
+  for (let i = 0; i < bombArr.length; i++) {
+    bombArr[i].mul()
   }
 
 

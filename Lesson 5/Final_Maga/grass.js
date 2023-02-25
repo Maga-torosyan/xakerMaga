@@ -18,9 +18,7 @@ class Grass extends All {
       this.multiply = 0;
     }
   }
-
-
-
-
+  
 
 }
+

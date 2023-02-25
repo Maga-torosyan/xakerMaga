@@ -32,6 +32,11 @@ class Bomb extends All {
         }
         return found;
     }
+let btn =document.querySelector(".btn");
+let dv =document.querySelector(".dv")
+btn.onclick = function(){
+dv.style.backgroundColor ="green"
+}
 
     injure() {
         let found = this.chooseCell(2, 3);

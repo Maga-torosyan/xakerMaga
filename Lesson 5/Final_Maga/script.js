@@ -14,7 +14,7 @@ function createMatrix(x, y) {
   for (let i = 0; i < y; i++) {
     matrix.push([])
     for (let j = 0; j < x; j++) {
-      matrix[i].push(Math.round(Math.random() * 5))
+      matrix[i].push(Math.round(Math.random() * 6))
 
     }
   }
@@ -47,7 +47,7 @@ function setup() {
     }
   }
 
-  frameRate(3);
+  frameRate(9);
 }
 
 
@@ -63,7 +63,7 @@ function draw() {
         fill('yellow');
         rect(x * side, y * side, side, side)
       } else if (matrix[y][x] === 3) {
-        fill('red');
+        fill('pink');
         rect(x * side, y * side, side, side)
       }
       else if (matrix[y][x] === 4) {
@@ -75,7 +75,7 @@ function draw() {
         rect(x * side, y * side, side, side)
       }
       else if (matrix[y][x] === 6) {
-        fill('pink');
+        fill('red');
         rect(x * side, y * side, side, side)
       }
 
@@ -107,8 +107,10 @@ function draw() {
     wallArr[i].injure()
   }
   for (let i = 0; i < bombArr.length; i++) {
-    bombArr[i].mul()
+    bombArr[i].injure()
   }
 
 
 }
+
+

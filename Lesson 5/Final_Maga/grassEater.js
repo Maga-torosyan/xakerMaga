@@ -2,7 +2,7 @@ class GrassEater extends All{
     constructor(x, y) {
        super(x,y)
         this.energy = 8;
-       this.gender = 0;
+       
 
 
     }
@@ -54,8 +54,7 @@ class GrassEater extends All{
     }
     move() {
 
-
-        let found = this.chooseCell(0);
+      let found = this.chooseCell(0);
         let emptyCell = random(found);
         if (emptyCell) {
             this.energy--;
@@ -84,7 +83,6 @@ class GrassEater extends All{
         matrix[this.y][this.x] = 0;
     }
     mul() {
-        let gend =this.gender();
         let found = this.chooseCell(0);
         let emptyCell = random(found);
         if (emptyCell) {
@@ -95,12 +93,9 @@ class GrassEater extends All{
             this.energy = 8;
             this.multiply = 0;
         }
-        else if (gend>=0) {
-            fill('orange');
-            rect(x * side, y * side, side, side);
-            console.log('boy')
-          }
-    }
+       
+       
+}
 
 
 

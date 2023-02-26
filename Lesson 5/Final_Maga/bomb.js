@@ -1,21 +1,10 @@
 class Bomb extends All {
     constructor(x, y) {
        super(x,y)
-        this.multiply = 0;
+        this.multiply = 1;
       
     }
-    getNewCoordinates() {
-        this.directions = [
-            [this.x - 1, this.y - 1],
-            [this.x, this.y - 1],
-            [this.x + 1, this.y - 1],
-            [this.x - 1, this.y],
-            [this.x + 1, this.y],
-            [this.x - 1, this.y + 1],
-            [this.x, this.y + 1],
-            [this.x + 1, this.y + 1]
-        ];
-    }
+   
 
     chooseCell(grassEater, allEater) {
         let found = [];
@@ -32,11 +21,6 @@ class Bomb extends All {
         }
         return found;
     }
-let btn =document.querySelector(".btn");
-let dv =document.querySelector(".dv")
-btn.onclick = function(){
-dv.style.backgroundColor ="green"
-}
 
     injure() {
         let found = this.chooseCell(2, 3);
@@ -75,9 +59,9 @@ dv.style.backgroundColor ="green"
     die() {
         matrix[this.y][this.x] = 0;
 
-        for (let i in wallArr) {
-            if (wallArr[i].x === this.x && wallArr[i].y === this.y) {
-                wallArr.splice(i, 1);
+        for (let i in bombArr) {
+            if (bombArr[i].x === this.x && bombArr[i].y === this.y) {
+                bombArr.splice(i, 1);
                 break
             }
         }
@@ -90,7 +74,7 @@ dv.style.backgroundColor ="green"
         if (emptyCell && this.multiply > 4) {
             let x = emptyCell[0];
             let y = emptyCell[1];
-            matrix[y][x] = 5;
+            matrix[y][x] = 6;
             wallArr.push(new Wall(x, y));
 
 
@@ -102,3 +86,45 @@ dv.style.backgroundColor ="green"
 
 
 }
+
+
+$('body').on('click', function(e) {
+    explode(e.pageX, e.pageY);
+  })
+  
+  
+  function explode(x, y) {
+    var particles = 15,
+    explosion = $('<div class="explosion"></div>');
+  
+    
+    $('body').append(explosion);
+  
+  
+    explosion.css('left', x - explosion.width() / 2);
+    explosion.css('top', y - explosion.height() / 2);
+  
+    for (var i = 0; i < particles; i++) {
+     
+      var x = (explosion.width() / 2) + rand(80, 150) * Math.cos(2 * Math.PI * i / rand(particles - 10, particles + 10)),
+        y = (explosion.height() / 2) + rand(80, 150) * Math.sin(2 * Math.PI * i / rand(particles - 10, particles + 10)),
+        color = rand(0, 255) + ', ' + rand(0, 255) + ', ' + rand(0, 255), 
+        elm = $('<div class="particle" style="' +
+          'background-color: rgb(' + color + ') ;' +
+          'top: ' + y + 'px; ' +
+          'left: ' + x + 'px"></div>');
+  
+      if (i == 0) { 
+        elm.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+          explosion.remove(); 
+        });
+      }
+      explosion.append(elm);
+    }
+  }
+  
+  
+  function rand(min, max) {
+    return Math.floor(Math.random() * (max + 1)) + min;
+  }
+

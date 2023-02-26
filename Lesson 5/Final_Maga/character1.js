@@ -2,6 +2,7 @@ class Character1 extends All {
   constructor(x, y) {
     super(x,y)
     this.energy = 5;
+    this.gender = 7;
 
     
   }
@@ -100,18 +101,10 @@ class Character1 extends All {
       this.multiply = 0;
     }
     
-      function setDelay(i) {
-        setTimeout(function(){
-            console.log(i);
-        }, 2000);
-      }
-      
-      for (var i = 0; i <= 10; ++i) {
-        setDelay(i);
-      }
+   
     
   }
-  
+ 
 
 }
 

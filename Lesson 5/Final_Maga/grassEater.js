@@ -2,7 +2,7 @@ class GrassEater extends All{
     constructor(x, y) {
        super(x,y)
         this.energy = 8;
-       
+       this.gender=1;
 
 
     }
@@ -93,6 +93,14 @@ class GrassEater extends All{
             this.energy = 8;
             this.multiply = 0;
         }
+        else  if(this.gender>=1){
+            this.gender-= 1;
+            this.move()
+            console.log("female");
+      
+      }  else{
+        this.die()
+      }
        
        
 }

@@ -2,7 +2,8 @@ class Character1 extends All {
   constructor(x, y) {
     super(x,y)
     this.energy = 5;
-    this.gender = 7;
+    this.gender = Math.floor(Math.random()*2);
+
 
     
   }
@@ -26,8 +27,11 @@ class Character1 extends All {
   }
 
   eat() {
-
-
+    if(this.gender)
+    {
+      fill('red')
+      rect(this.x * side, this.y * side, side, side)
+    }
     let found = this.chooseCell(2);
     let emptyCell = random(found);
     if (emptyCell) {
@@ -47,7 +51,7 @@ class Character1 extends All {
       matrix[this.y][this.x] = 0;
       this.x = x;
       this.y = y;
-      if (this.energy > 10) {
+      if (this.energy >=0) {
         this.mul();
       }
     } else {
@@ -100,6 +104,10 @@ class Character1 extends All {
       this.energy = 10;
       this.multiply = 0;
     }
+     else{
+this.die()
+}
+
     
    
     

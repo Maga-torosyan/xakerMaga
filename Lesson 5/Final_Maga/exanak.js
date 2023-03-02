@@ -1,8 +1,13 @@
 let wint =document.querySelector(".wint");
-let block =document.querySelector(".block")
 
+wint.onclick =function (){
+    alert('Hi  Winter')
+    weatherColor = 'skyblue'
 
-block.onmouseenter =function (){
-    dv.style.backgroundColor ="red"
-    console.log("enter")
+   setTimeout(function() {
+    weatherColor = 'black'
+ },3000);
+    frameRate(1);
+    
 }
+

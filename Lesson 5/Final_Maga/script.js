@@ -6,8 +6,9 @@ let allEaterArr = [];
 let character1Arr = [];
 let wallArr = [];
 let bombArr = [];
-
-
+let weatherColor = 'black'
+// let male = "0"
+// let female ="1"
 
 
 function createMatrix(x, y) {
@@ -47,7 +48,7 @@ function setup() {
     }
   }
 
-  frameRate(9);
+   frameRate(6);
 }
 
 
@@ -63,11 +64,11 @@ function draw() {
         fill('yellow');
         rect(x * side, y * side, side, side)
       } else if (matrix[y][x] === 3) {
-        fill('pink');
+        fill('blue');
         rect(x * side, y * side, side, side)
       }
       else if (matrix[y][x] === 4) {
-        fill('blue');
+        fill('pink');
         rect(x * side, y * side, side, side)
       }
       else if (matrix[y][x] === 5) {
@@ -75,13 +76,13 @@ function draw() {
         rect(x * side, y * side, side, side)
       }
       else if (matrix[y][x] === 6) {
-        fill('red');
+        fill('brown');
         rect(x * side, y * side, side, side)
       }
 
 
       else {
-        fill("black");
+        fill(weatherColor);
         rect(x * side, y * side, side, side)
       }
 

@@ -1,13 +1,13 @@
-let wint =document.querySelector(".wint");
+let wint = document.querySelector(".wint");
 
-wint.onclick =function (){
-    alert('Hi  Winter')
+wint.onclick = function () {
+    alert('Hi  Winter ')
     weatherColor = 'skyblue'
 
-   setTimeout(function() {
-    weatherColor = 'black'
- },3000);
+    setTimeout(function () {
+        weatherColor = 'black'
+    }, 3000);
     frameRate(1);
-    
+
 }
 

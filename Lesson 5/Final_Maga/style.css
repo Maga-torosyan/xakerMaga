@@ -23,9 +23,29 @@
      opacity: 1;
    }
  }
+.wint{
+  background-color: skyblue;
+  height: 50px;
+  width:  100px;
+  font-size: large;
+  align-content: center;
 
-
- 
+}
+.block{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  animation: mymove 5s infinite;
+}
+.particle__container{
+  display: flex;
+  justify-content: center;
+}
+@keyframes mymove {
+  from {top: 0px;}
+  50% {top: 100px !important;} 
+  to {top: 200px;}
+}
  
  
  

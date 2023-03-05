@@ -1,10 +1,10 @@
 class Wall extends All {
     constructor(x, y) {
-       super(x,y) 
+        super(x, y)
         this.multiply = 0;
-       
+
     }
-  
+
 
     chooseCell(grassEater, allEater) {
         let found = [];

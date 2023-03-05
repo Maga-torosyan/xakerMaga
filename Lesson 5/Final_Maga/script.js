@@ -6,9 +6,11 @@ let allEaterArr = [];
 let character1Arr = [];
 let wallArr = [];
 let bombArr = [];
-let weatherColor = 'black'
-// let male = "0"
-// let female ="1"
+let weatherColor = 'black';
+let exanakArr = [];
+ let statistic = {};
+var  socket = io();
+
 
 
 function createMatrix(x, y) {
@@ -48,11 +50,30 @@ function setup() {
     }
   }
 
-   frameRate(6);
+  frameRate(7);
 }
 
 
 function draw() {
+
+  if (frameCount % 5 == 0) {
+    var statistic = {
+        "frameCount": Math.round(frameCount/5),
+        "exanakC": exanakArr.length,
+        "grassC": grassArr.length,
+        "allEaterC": allEaterArr.length,
+        "character1C": character1Arr.length,
+        "grassEaterC": grassEaterArr.length,
+        "wallC": wallArr.length,
+        "bombC": bombArr.length,
+       
+  }
+
+    socket.emit("send statistics", statistic);
+}
+
+
+  
 
   for (let y = 0; y < matrix.length; y++) {
     for (let x = 0; x < matrix[y].length; x++) {

@@ -1,9 +1,9 @@
 class Grass extends All {
   constructor(x, y) {
-  super(x,y)
-  this.energy = 8;
+    super(x, y)
+    this.energy = 8;
   }
- 
+
 
   mul() {
     this.multiply++;
@@ -18,7 +18,7 @@ class Grass extends All {
       this.multiply = 0;
     }
   }
-  
+
 
 }
 

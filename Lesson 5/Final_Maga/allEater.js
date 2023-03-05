@@ -1,16 +1,14 @@
-class AllEater extends All{
+class AllEater extends All {
   constructor(x, y) {
-    super(x,y)
+    super(x, y)
     this.energy = 10;
-    
-  
-  }
+}
 
-  
+
 
   chooseCell(grass, grassEater) {
-  this.getNewCoordinates();
-  return super.chooseCell(grass, grassEater);
+    this.getNewCoordinates();
+    return super.chooseCell(grass, grassEater);
   }
 
   eat() {
